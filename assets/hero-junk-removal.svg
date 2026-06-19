@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" role="img" aria-labelledby="title desc">
+  <title id="title">Junk removal truck placeholder</title>
+  <desc id="desc">Illustrated placeholder showing boxed junk being loaded into a removal truck.</desc>
+  <rect width="900" height="640" fill="#eef2e8"/>
+  <rect x="70" y="408" width="760" height="70" rx="12" fill="#d5ddcf"/>
+  <rect x="118" y="226" width="520" height="184" rx="16" fill="#ffffff"/>
+  <rect x="638" y="278" width="124" height="132" rx="14" fill="#17834f"/>
+  <path d="M762 328h44l36 82h-80z" fill="#0f5f3b"/>
+  <rect x="168" y="270" width="184" height="88" rx="8" fill="#f4b942"/>
+  <rect x="382" y="260" width="142" height="98" rx="8" fill="#dfe5da"/>
+  <rect x="542" y="314" width="82" height="44" rx="8" fill="#dfe5da"/>
+  <circle cx="244" cy="430" r="48" fill="#15221c"/>
+  <circle cx="716" cy="430" r="48" fill="#15221c"/>
+  <circle cx="244" cy="430" r="20" fill="#eef2e8"/>
+  <circle cx="716" cy="430" r="20" fill="#eef2e8"/>
+  <rect x="176" y="120" width="118" height="94" rx="10" fill="#ffffff" stroke="#c7d1c0" stroke-width="5"/>
+  <rect x="314" y="146" width="104" height="68" rx="10" fill="#f4b942"/>
+  <rect x="450" y="118" width="130" height="96" rx="10" fill="#ffffff" stroke="#c7d1c0" stroke-width="5"/>
+  <path d="M135 504h635" stroke="#a8b6a2" stroke-width="10" stroke-linecap="round"/>
+  <text x="150" y="336" font-family="Arial, sans-serif" font-size="46" font-weight="800" fill="#15221c">JUNK REMOVAL</text>
+</svg>

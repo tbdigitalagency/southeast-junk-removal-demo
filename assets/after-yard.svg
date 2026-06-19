@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <rect width="640" height="420" fill="#dce9d7"/>
+  <rect y="240" width="640" height="180" fill="#84ad72"/>
+  <path d="M88 300c108-42 246-42 464 0" stroke="#b7d7a8" stroke-width="26" stroke-linecap="round"/>
+  <path d="M132 345h380" stroke="#638e5a" stroke-width="12" stroke-linecap="round"/>
+  <text x="52" y="58" font-family="Arial, sans-serif" font-size="32" font-weight="800" fill="#17834f">AFTER</text>
+</svg>
