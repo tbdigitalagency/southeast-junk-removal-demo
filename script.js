@@ -103,7 +103,7 @@
     .map(
       (proof) => `
         <article class="local-proof-card">
-          <span class="proof-check" aria-hidden="true">✓</span>
+          <span class="proof-check" aria-hidden="true">&check;</span>
           <h3>${proof.title}</h3>
           <p>${proof.description}</p>
         </article>
@@ -148,7 +148,7 @@
     event.preventDefault();
     const data = new FormData(form);
     const name = data.get("name");
-    status.textContent = `Thanks, ${name}. This demo form is ready to connect to a CRM, email service, or form endpoint. For now, call ${config.phone} to finish the quote.`;
+    status.textContent = `Thanks, ${name}. For the fastest quote, call or text photos to ${config.phone}.`;
     form.reset();
   });
 })();

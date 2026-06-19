@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" role="img" aria-labelledby="title desc">
-  <title id="title">Junk removal truck placeholder</title>
-  <desc id="desc">Illustrated placeholder showing boxed junk being loaded into a removal truck.</desc>
+  <title id="title">Junk removal truck</title>
+  <desc id="desc">Illustration showing boxed junk being loaded into a removal truck.</desc>
   <rect width="900" height="640" fill="#eef2e8"/>
   <rect x="70" y="408" width="760" height="70" rx="12" fill="#d5ddcf"/>
   <rect x="118" y="226" width="520" height="184" rx="16" fill="#ffffff"/>

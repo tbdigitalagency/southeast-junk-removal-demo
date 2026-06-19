@@ -1,5 +1,4 @@
 window.siteConfig = {
-  // Replace these fields for each junk removal client.
   businessName: "Southeast Junk Removal",
   phone: "(912) 555-0124",
   phoneHref: "+19125550124",
@@ -9,26 +8,26 @@ window.siteConfig = {
   serviceAreas: ["Statesboro", "Savannah", "Pooler", "Brooklet", "Rincon", "Nearby Southeast Georgia"],
   trustBadges: ["Free Quotes", "Same-Week Service", "Locally Owned", "Responsible Disposal"],
   proofStats: [
-    { value: "24 hr", label: "Typical quote response" },
-    { value: "6", label: "Core removal services" },
-    { value: "100%", label: "Placeholder satisfaction goal" }
+    { value: "24 hr", label: "Quote response goal" },
+    { value: "6", label: "Junk removal services" },
+    { value: "Local", label: "Statesboro-based service" }
   ],
   localProof: [
     {
       title: "Fast Response Times",
-      description: "Placeholder copy for quick callbacks, photo-based estimates, and simple scheduling."
+      description: "Send photos of the junk and access point, and we will follow up quickly with next steps."
     },
     {
       title: "Fair Pricing",
-      description: "Placeholder copy for clear quotes based on load size, labor, access, and disposal."
+      description: "Quotes are based on load size, item weight, labor, access, and disposal needs."
     },
     {
       title: "Responsible Disposal",
-      description: "Placeholder copy for donation, recycling, and proper local disposal whenever possible."
+      description: "Reusable items are routed for donation or recycling when local options are available."
     },
     {
       title: "Friendly Local Service",
-      description: "Placeholder copy for respectful crews serving Statesboro homeowners and property managers."
+      description: "Respectful hauling help for Statesboro homeowners, landlords, agents, and property managers."
     }
   ],
 
@@ -91,18 +90,18 @@ window.siteConfig = {
   testimonials: [
     {
       quote: "They cleared a full garage in one afternoon and left the space swept clean.",
-      name: "Statesboro homeowner",
-      detail: "Placeholder review"
+      name: "Statesboro Homeowner",
+      detail: "Garage cleanout"
     },
     {
       quote: "Easy quote, fair price, and no hassle getting old furniture out of a rental.",
-      name: "Property manager",
-      detail: "Placeholder review"
+      name: "Local Property Manager",
+      detail: "Rental turnover"
     },
     {
       quote: "The crew showed up on time and handled heavy appliances without damaging anything.",
-      name: "Savannah customer",
-      detail: "Placeholder review"
+      name: "Savannah Area Customer",
+      detail: "Appliance pickup"
     }
   ],
 

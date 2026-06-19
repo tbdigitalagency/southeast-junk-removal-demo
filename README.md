@@ -1,10 +1,10 @@
 # Southeast Junk Removal Landing Page
 
-Static one-page lead-generation site for a junk removal business.
+Static one-page lead-generation site for a local junk removal business serving Statesboro, Savannah, and nearby Southeast Georgia communities.
 
 ## Customize
 
-Edit `config.js` to replace:
+Edit `config.js` to update:
 
 - Business name
 - Phone number
@@ -14,7 +14,7 @@ Edit `config.js` to replace:
 - FAQ copy
 - Brand colors
 
-Replace the SVG files in `assets/` with real job photos when available. The quote form currently shows a demo success message; connect the form handler in `script.js` to a CRM, email endpoint, or form service before publishing.
+The form currently keeps visitors on the page and directs them to call or text photos for the fastest quote. For a production lead system, connect the form handler in `script.js` to email, SMS, a CRM, or a form endpoint.
 
 ## Run
 
