@@ -24,6 +24,7 @@ body {
   color: var(--ink);
   font-family: Roboto, Arial, sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -276,7 +277,8 @@ h3 {
   border-radius: 8px;
   background: var(--surface);
   box-shadow: var(--shadow);
-  animation: truck-intro 700ms ease-out both;
+  animation: truck-drive-in 2.15s cubic-bezier(0.2, 0.86, 0.25, 1) both;
+  will-change: transform;
 }
 
 .hero-media img {
@@ -304,14 +306,24 @@ h3 {
   line-height: 1;
 }
 
-@keyframes truck-intro {
-  from {
-    opacity: 0;
-    transform: translateX(22px);
+@keyframes truck-drive-in {
+  0% {
+    transform: translateX(-120vw);
   }
 
-  to {
-    opacity: 1;
+  72% {
+    transform: translateX(0);
+  }
+
+  82% {
+    transform: translateX(14px) translateY(-2px);
+  }
+
+  91% {
+    transform: translateX(-5px) translateY(1px);
+  }
+
+  100% {
     transform: translateX(0);
   }
 }
