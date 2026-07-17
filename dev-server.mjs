@@ -1,6 +1,7 @@
 import { createReadStream, existsSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import { extname, join, normalize } from "node:path";
+import analyzeSite from "./api/analyze-site.js";
 
 const root = process.cwd();
 const port = Number(process.env.PORT || 4187);
@@ -21,6 +22,11 @@ createServer(async (request, response) => {
 
   if (url.pathname === "/api/places-search") {
     await handlePlacesSearch(url, response);
+    return;
+  }
+
+  if (url.pathname === "/api/analyze-site") {
+    await handleAnalyzeSite(url, response);
     return;
   }
 
@@ -104,4 +110,19 @@ async function handlePlacesSearch(url, response) {
 function sendJson(response, status, payload) {
   response.writeHead(status, { "content-type": "application/json; charset=utf-8" });
   response.end(JSON.stringify(payload));
+}
+
+async function handleAnalyzeSite(url, response) {
+  await analyzeSite(
+    { query: Object.fromEntries(url.searchParams.entries()) },
+    {
+      status(code) {
+        response.statusCode = code;
+        return this;
+      },
+      json(payload) {
+        sendJson(response, response.statusCode || 200, payload);
+      },
+    },
+  );
 }

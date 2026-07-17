@@ -199,6 +199,7 @@ const elements = {
   competitorsEditor: $("#competitorsEditor"),
   reportPreview: $("#reportPreview"),
   outreachCopy: $("#outreachCopy"),
+  analyzeStatus: $("#analyzeStatus"),
 };
 
 function persist() {
@@ -656,6 +657,57 @@ async function searchPlacesProspects() {
   }
 }
 
+async function analyzeCurrentWebsite() {
+  const audit = collectFormAudit();
+  if (!audit.website) {
+    elements.analyzeStatus.textContent = "Add a website URL first.";
+    return;
+  }
+
+  elements.analyzeStatus.textContent = "Analyzing website...";
+
+  try {
+    const response = await fetch(`/api/analyze-site?${new URLSearchParams({ url: audit.website })}`);
+    const payload = await response.json();
+
+    if (!response.ok) {
+      elements.analyzeStatus.textContent = payload.error || "Analysis failed.";
+      return;
+    }
+
+    audit.scores = payload.scores || audit.scores;
+    audit.findings = payload.findings?.length ? payload.findings : audit.findings;
+    audit.summary = analysisSummary(audit, payload.signals);
+    audit.updatedAt = new Date().toISOString();
+
+    const index = state.audits.findIndex((item) => item.id === audit.id);
+    if (index >= 0) state.audits[index] = audit;
+    else state.audits.unshift(audit);
+    state.selectedId = audit.id;
+    persist();
+    render();
+    setView("editor");
+    elements.analyzeStatus.textContent = `Analyzed ${new URL(payload.signals.finalUrl).hostname}`;
+  } catch {
+    elements.analyzeStatus.textContent = "Analyzer endpoint is not available.";
+  }
+}
+
+function analysisSummary(audit, signals) {
+  const found = [];
+  const missing = [];
+  if (signals.phoneFound) found.push("phone number");
+  else missing.push("phone number");
+  if (signals.formFound) found.push("contact form");
+  else missing.push("contact form");
+  if (signals.bookingFound) found.push("booking path");
+  else missing.push("booking path");
+  if (signals.reviewFound) found.push("trust proof");
+  else missing.push("trust proof");
+
+  return `${audit.businessName || "This business"} was analyzed from its homepage. Detected: ${found.join(", ") || "limited lead-capture signals"}. Missing or weak: ${missing.join(", ") || "no major basics from the homepage scan"}. The recommended first fix should focus on the highest-friction gap found in the lead path.`;
+}
+
 function mergeProspects(imported) {
   const existing = new Set(state.prospects.map(prospectKey));
   const unique = imported.filter((prospect) => {
@@ -794,6 +846,7 @@ $("#createAuditNavButton").addEventListener("click", createNewAudit);
 $("#saveAuditButton").addEventListener("click", saveAudit);
 $("#importCsvButton").addEventListener("click", importCsvProspects);
 $("#apiSearchButton").addEventListener("click", searchPlacesProspects);
+$("#analyzeWebsiteButton").addEventListener("click", analyzeCurrentWebsite);
 elements.prospectNiche.addEventListener("input", renderProspectSearchLinks);
 elements.prospectLocation.addEventListener("input", renderProspectSearchLinks);
 elements.prospectSearch.addEventListener("input", renderProspectList);

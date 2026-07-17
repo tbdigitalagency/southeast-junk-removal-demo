@@ -89,6 +89,15 @@ h3 { margin: 0; font-size: 1.1rem; }
   gap: 18px;
   margin-bottom: 24px;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 .primary-button, .secondary-button, .text-button, .danger-button { border-radius: 8px; font-weight: 800; }
 .primary-button { border: 0; padding: 12px 18px; background: var(--accent); color: #fff; }
 .primary-button:hover { background: var(--accent-dark); }
@@ -280,6 +289,7 @@ legend { padding: 0 6px; color: var(--ink); font-weight: 900; }
   .workspace, .sidebar { padding: 20px; }
   .section-header, .audit-card, .prospect-card, .report-hero { grid-template-columns: 1fr; }
   .section-header { align-items: start; }
+  .header-actions { justify-content: flex-start; }
   .score-dial { justify-self: start; }
   .prospect-actions { justify-content: flex-start; }
 }
